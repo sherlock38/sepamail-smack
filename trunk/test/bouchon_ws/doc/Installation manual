@@ -1,0 +1,36 @@
+Installation of SMACKTest.
+
+1. Create a virtual host for SMACK webservice as follows
+
+<VirtualHost *:80>
+   DocumentRoot "Path to the www directory in SMACKTest"
+   
+   # Defined in the SMACK config file "verificationWSUrl"
+   ServerName smackcontrole.loc
+   ServerAlias smackcontrole.loc
+
+   ServerAdmin "Server Admin email"
+
+   # This should be omitted in the production environment
+   SetEnv APPLICATION_ENV development
+
+   <Directory "Path to the www directory in SMACKTest">
+       Options Indexes MultiViews FollowSymLinks
+       AllowOverride All
+       Order allow,deny
+       Allow from all
+   </Directory>
+
+</VirtualHost>
+
+2. The SMACK config file can be customised if need be it resides in"SMACKTest/tst/smack/conf/smack.properties"
+
+3. The SMACK log file resides in "SMACKTest/tst/smack/log/smack.log"
+
+4. The XSL used for the transformation from Nominal missive to Acknowledgement resides in "SMACKTest/tst/smack/xsl/payment_activation_transition_message_ActivationRequest2ActivationAcknowledgement.xsl"
+
+5. The input nominal missive resides in "SMACKTest/tst/input"
+
+6. The acknowledgements that will be generated will resside on "SMACKTest/tst/output"
+
+7. The bach script "SMACKTest/SMACKTest.sh" should be executed and it will execute a list of predefine tests. 
