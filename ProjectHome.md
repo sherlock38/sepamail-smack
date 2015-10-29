@@ -1,0 +1,1 @@
+SMACK is a tool for automatic acknowledgment
